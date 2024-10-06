@@ -1,0 +1,65 @@
+/* src/components/NotesPanel.css */
+.notes-panel {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.default {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notes-header h2 {
+    margin: 0;
+}
+
+.notes-list {
+    flex-grow: 1;
+    margin-top: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-note-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-note-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 60px;
+    font-family: Arial, sans-serif;
+}
+
+.add-note-form button {
+    align-self: flex-end;
+    padding: 8px 16px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-note-form button:hover {
+    background-color: #45a049;
+}
