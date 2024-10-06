@@ -1,0 +1,11 @@
+/* src/App.css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.app-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
