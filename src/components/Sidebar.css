@@ -1,0 +1,82 @@
+/* src/components/Sidebar.css */
+.sidebar {
+    width: 450px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.topics-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.topic-item:hover {
+    background-color: #e0e0e0;
+}
+
+.topic-item.active {
+    background-color: #d0d0d0;
+    font-weight: bold;
+}
+
+.topic-initials {
+    width: 30px;
+    height: 30px;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.topic-name {
+    flex-grow: 1;
+}
+
+.add-topic-button {
+    padding: 1px;
+    font-size: 50px;
+    font-weight: bolder;
+    border: none;
+    background-color: #16008B;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    align-self: center;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.add-topic-button:hover {
+    background-color: #16008A;
+}
