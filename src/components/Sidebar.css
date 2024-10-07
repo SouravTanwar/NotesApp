@@ -1,8 +1,7 @@
-/* src/components/Sidebar.css */
 .sidebar {
     width: 450px;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #FFFFFF;
+    padding: 20px 0px;
     box-sizing: border-box;
     border-right: 1px solid #ddd;
     display: flex;
@@ -11,48 +10,69 @@
     position: relative;
 }
 
-.sidebar h2 {
-    margin-top: 0;
+.heading {
+    margin-top: 60px;
+    margin-bottom: 50px;
     text-align: center;
+    font-size: 32px;
+    font-weight: 500;
 }
 
 .topics-list {
     flex-grow: 1;
     overflow-y: auto;
+    font-size: 24px;
+    font-weight: 500;
 }
+
+.custom-scrollbar {
+    overflow-y: auto; 
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #D9D9D9; 
+    border-radius: 5px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #FFFFFF; 
+    border: 1.5px solid #D9D9D9; 
+    border-radius: 4px;
+}
+
 
 .topic-item {
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 20px 50px;
     cursor: pointer;
-    background-color: #fff;
-    border-radius: 4px;
+    background-color: #FFFFFF;
+    border-radius: 14px;
     transition: background-color 0.3s;
 }
 
 .topic-item:hover {
-    background-color: #e0e0e0;
+    background-color: #E0E0E0;
 }
 
 .topic-item.active {
-    background-color: #d0d0d0;
+    background-color: #2F2F2F2B;
     font-weight: bold;
 }
 
 .topic-initials {
-    width: 30px;
-    height: 30px;
-    background-color: #2196f3;
+    width: 60px;
+    height: 60px;
     color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
-    font-weight: bold;
-    font-size: 14px;
+    margin-right: 25px;
 }
 
 .topic-name {
@@ -61,20 +81,20 @@
 
 .add-topic-button {
     padding: 1px;
-    font-size: 50px;
-    font-weight: bolder;
+    font-size: 70px;
+    font-weight: bold;
     border: none;
     background-color: #16008B;
     color: white;
     border-radius: 50%;
     cursor: pointer;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     align-self: center;
     transition: background-color 0.3s;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 45px;
+    right: 30px;
 }
 
 .add-topic-button:hover {

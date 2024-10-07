@@ -12,7 +12,7 @@ function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic }) {
   return (
     <div className="sidebar">
       <h2 className='heading'>Pocket Notes</h2>
-      <div className="topics-list">
+      <div className="topics-list custom-scrollbar">
         {topics.map((topic) => (
           <div
             key={topic.id}
