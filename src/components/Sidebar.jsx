@@ -2,19 +2,16 @@ import React from 'react';
 import './Sidebar.css';
 
 function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic }) {
-  // Function to extract initials from topic name
+  
   const getInitials = (name) => {
-    const initials = name
-      .split(' ')
-      .map(word => word[0])
-      .join('')
-      .toUpperCase();
-    return initials;
-  };
+    const words = name.split(' ');
+    return (words[0][0] + (words[1] ? words[1][0] : '')).toUpperCase();
+};
+
 
   return (
     <div className="sidebar">
-      <h2>Pocket Notes</h2>
+      <h2 className='heading'>Pocket Notes</h2>
       <div className="topics-list">
         {topics.map((topic) => (
           <div
