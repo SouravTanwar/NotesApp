@@ -21,9 +21,9 @@ function NotesPanel({ topic, onAddNote }) {
       <div className="notes-panel">
         <div className='default'>
           <img src={backgroundImg} alt="Background Image" />
-          <h2>Pocket Notes</h2>
-          <p>Send and receive messages without keeping your phone online.</p>
-          <p>Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p>
+          <h2 className='default-heading'>Pocket Notes</h2>
+          <p className='default-content'>Send and receive messages without keeping your phone online.</p>
+          <p className='default-content'>Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p>
         </div>
         <div className='footer'> 
         <span class="material-symbols-outlined">lock</span>
@@ -47,20 +47,22 @@ function NotesPanel({ topic, onAddNote }) {
         <textarea
           value={newNoteContent}
           onChange={(e) => setNewNoteContent(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault(); 
+              handleAddNote(e); 
+            }
+          }}
           placeholder="Enter your text here..."
-          
           required
         ></textarea>
-        <button 
+        <span 
           type="submit"
+          style={{color: newNoteContent ? "#001F8B" : "#ABABAB"}}
+          className="material-symbols-outlined submit"
         >
-          <span 
-            style={{color: newNoteContent ? "#001F8B" : "#ABABAB" }}
-            class="material-symbols-outlined"
-          >
-            send
-          </span>
-        </button>
+          send
+        </span>
       </form>
     </div>
   );

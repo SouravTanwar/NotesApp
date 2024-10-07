@@ -1,11 +1,10 @@
-/* src/components/NotesPanel.css */
 .notes-panel {
     flex-grow: 1;
-    padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #DAE5F5;
 }
 
 .default {
@@ -15,51 +14,77 @@
     align-items: center;
 }
 
+.default-heading{
+    font-size: 50px;
+    font-weight: 700;
+    margin: 20px 0px;
+}
+
+.default-content{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #292929;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #292929;
+}
+
 .notes-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #001F8B;
+    color: #FFFFFF;
+    padding: 35px;
 }
 
 .notes-header h2 {
     margin: 0;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .notes-list {
     flex-grow: 1;
-    margin-top: 20px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    padding: 25px 25px 25px 35px;
 }
 
 .add-note-form {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    background-color: #001F8B;
 }
 
 .add-note-form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-    min-height: 60px;
-    font-family: Arial, sans-serif;
-}
-
-.add-note-form button {
-    align-self: flex-end;
-    padding: 8px 16px;
+    margin: 30px;
+    padding: 20px;
     border: none;
-    background-color: #4caf50;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 11px;
+    resize: vertical;
+    height: 220px;
+    font-size: 30px;
+    font-weight: 400;
+    outline: none;
 }
 
-.add-note-form button:hover {
-    background-color: #45a049;
+.submit{
+    font-size: 50px;
+    position: absolute;
+    bottom: 40px;
+    right: 45px;
+    align-self: flex-end;
+    border: none;
+    cursor: pointer;
 }
