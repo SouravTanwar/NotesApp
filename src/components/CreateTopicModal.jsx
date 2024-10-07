@@ -1,11 +1,27 @@
 // src/components/CreateTopicModal.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './CreateTopicModal.css';
 
 function CreateTopicModal({ onClose, onAddTopic }) {
   const [name, setName] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
-  const colors = ["#FF6A6A", "#6A5ACD", "#FFB6C1", "#4682B4", "#32CD32", "#FFD700"];
+  const modalRef = useRef();
+
+  const colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+  
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,11 +39,11 @@ function CreateTopicModal({ onClose, onAddTopic }) {
 
   return (
     <div className="modal-overlay">
-      <div className="modal">
-        <h2>Create New Group</h2>
+      <div className="modal" ref={modalRef}>
+        <h2>Create New group</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Group Name:</label>
+            <label>Group Name</label>
             <input
               type="text"
               value={name}
@@ -37,7 +53,7 @@ function CreateTopicModal({ onClose, onAddTopic }) {
             />
           </div>
           <div className="form-group">
-            <label>Choose Color:</label>
+            <label>Choose Colour</label>
             <div className="color-picker">
               {colors.map((color, index) => (
                 <div
@@ -53,12 +69,7 @@ function CreateTopicModal({ onClose, onAddTopic }) {
               ))}
             </div>
           </div>
-          <div className="modal-actions">
-            <button type="submit">Add Topic</button>
-            <button type="button" onClick={onClose} className="cancel-button">
-              Cancel
-            </button>
-          </div>
+          <button className='modal-submit' type="submit">Create</button>
         </form>
       </div>
     </div>
