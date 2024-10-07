@@ -1,4 +1,3 @@
-// src/components/CreateTopicModal.js
 import React, { useState, useRef, useEffect } from 'react';
 import './CreateTopicModal.css';
 
