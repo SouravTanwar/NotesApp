@@ -1,5 +1,5 @@
 .sidebar {
-    width: 450px;
+    width: 25vw;
     background-color: #FFFFFF;
     padding: 20px 0px;
     box-sizing: border-box;
@@ -8,11 +8,12 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    flex-shrink: 0;
 }
 
 .heading {
-    margin-top: 60px;
-    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
     text-align: center;
     font-size: 32px;
     font-weight: 500;
@@ -82,7 +83,7 @@
 .add-topic-button {
     padding: 1px;
     font-size: 70px;
-    font-weight: bold;
+    font-weight: 500;
     border: none;
     background-color: #16008B;
     color: white;
@@ -95,8 +96,5 @@
     position: absolute;
     bottom: 45px;
     right: 30px;
-}
-
-.add-topic-button:hover {
-    background-color: #16008A;
+    font-family: "Roboto";
 }

@@ -32,7 +32,11 @@ function CreateTopicModal({ onClose, onAddTopic }) {
       alert('Choose a color');
       return;
     }
-    onAddTopic(name, selectedColor);
+
+    const words = name.trim().split(' ');
+    const initials = (words[0][0] + (words[1] ? words[1][0] : '')).toUpperCase();
+
+    onAddTopic(initials, name, selectedColor);
     onClose();
   };
 

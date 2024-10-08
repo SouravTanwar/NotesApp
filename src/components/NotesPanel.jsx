@@ -36,9 +36,15 @@ function NotesPanel({ topic, onAddNote }) {
   return (
     <div className="notes-panel">
       <div className="notes-header">
+        <div 
+          className="topic-initials"
+          style={{ backgroundColor: topic.color }}
+        >
+          {topic.initials}
+        </div>
         <h2>{topic.name}</h2>
       </div>
-      <div className="notes-list">
+      <div className="notes-list custom-scrollbar">
         {topic.notes.map((note) => (
           <Note key={note.id} note={note} />
         ))}
@@ -48,21 +54,21 @@ function NotesPanel({ topic, onAddNote }) {
           value={newNoteContent}
           onChange={(e) => setNewNoteContent(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-              e.preventDefault(); 
-              handleAddNote(e); 
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              handleAddNote(e);
             }
           }}
           placeholder="Enter your text here..."
           required
         ></textarea>
-        <span 
+        <button
           type="submit"
           style={{color: newNoteContent ? "#001F8B" : "#ABABAB"}}
           className="material-symbols-outlined submit"
         >
           send
-        </span>
+        </button>
       </form>
     </div>
   );

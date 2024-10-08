@@ -3,11 +3,6 @@ import './Sidebar.css';
 
 function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic }) {
   
-  const getInitials = (name) => {
-    const words = name.split(' ');
-    return (words[0][0] + (words[1] ? words[1][0] : '')).toUpperCase();
-};
-
 
   return (
     <div className="sidebar">
@@ -23,7 +18,7 @@ function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic }) {
               className="topic-initials"
               style={{ backgroundColor: topic.color }}
             >
-              {getInitials(topic.name)}
+              {topic.initials}
             </div>
             <span className="topic-name">{topic.name}</span>
           </div>
