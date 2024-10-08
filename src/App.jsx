@@ -10,6 +10,7 @@ function App() {
       id: 1,
       name: 'Work',
       color: '#FF6347',
+      initials: 'W',
       notes: [
         { id: 1, content: 'Discuss project timelines...', createdAt: new Date() },
         { id: 2, content: 'Finish report and call client...', createdAt: new Date() },
@@ -19,6 +20,7 @@ function App() {
       id: 2,
       name: 'Personal',
       color: '#87CEEB',
+      initials: 'P',
       notes: [
         { id: 3, content: 'Buy eggs, milk, and bread...', createdAt: new Date() },
       ],
@@ -28,11 +30,12 @@ function App() {
   const [selectedTopicId, setSelectedTopicId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const addTopic = (name, color) => {
+  const addTopic = (initials, name, color) => {
     const newTopic = {
       id: Date.now(),
       name,
       color,
+      initials,
       notes: [],
     };
     setTopics([...topics, newTopic]);
