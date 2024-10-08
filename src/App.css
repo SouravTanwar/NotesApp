@@ -10,3 +10,34 @@
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
+
+.sidebar, .notes-panel{
+    display: none;
+}
+
+@media (min-width: 700px) {
+    .sidebar{
+        display: flex;
+    }
+    .notes-panel{
+        display: flex;
+    }
+    .arrow-back{
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar.show{
+        display: flex;
+    }
+    .sidebar.hide{
+        display: none;
+    }
+    .notes-panel.show{
+        display: flex;
+    }
+    .notes-panel.hide{
+        display: none;
+    }
+}
