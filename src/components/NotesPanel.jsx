@@ -3,7 +3,7 @@ import Note from './Note';
 import './NotesPanel.css';
 import backgroundImg from '../assets/background.png';
 
-function NotesPanel({ topic, onAddNote }) {
+function NotesPanel({ topic, onAddNote, show, onBack }) {
   const [newNoteContent, setNewNoteContent] = useState('');
 
   const handleAddNote = (e) => {
@@ -20,22 +20,25 @@ function NotesPanel({ topic, onAddNote }) {
     return (
       <div className="notes-panel">
         <div className='default'>
-          <img src={backgroundImg} alt="Background Image" />
+          <img src={backgroundImg} alt="Background Image" className='bg-image'/>
           <h2 className='default-heading'>Pocket Notes</h2>
           <p className='default-content'>Send and receive messages without keeping your phone online.</p>
           <p className='default-content'>Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p>
         </div>
         <div className='footer'> 
-        <span class="material-symbols-outlined">lock</span>
-        <span>end to end encrypted</span>
+          <span className="material-symbols-outlined">lock</span>
+          <span>end-to-end encrypted</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="notes-panel">
+    <div className={`notes-panel ${show}`}>
       <div className="notes-header">
+        <span onClick={onBack} className="arrow-back material-symbols-rounded">
+          keyboard_backspace
+        </span>
         <div 
           className="topic-initials"
           style={{ backgroundColor: topic.color }}
@@ -44,7 +47,7 @@ function NotesPanel({ topic, onAddNote }) {
         </div>
         <h2>{topic.name}</h2>
       </div>
-      <div className="notes-list custom-scrollbar">
+      <div className="notes-list custom-note-scrollbar">
         {topic.notes.map((note) => (
           <Note key={note.id} note={note} />
         ))}

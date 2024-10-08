@@ -1,11 +1,11 @@
 import React from 'react';
 import './Sidebar.css';
 
-function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic }) {
+function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic, show }) {
   
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${show}`}>
       <h2 className='heading'>Pocket Notes</h2>
       <div className="topics-list custom-scrollbar">
         {topics.map((topic) => (

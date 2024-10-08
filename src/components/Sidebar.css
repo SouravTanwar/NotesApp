@@ -1,5 +1,4 @@
 .sidebar {
-    width: 25vw;
     background-color: #FFFFFF;
     padding: 20px 0px;
     box-sizing: border-box;
@@ -8,11 +7,11 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    flex-shrink: 0;
+    flex:1;
 }
 
 .heading {
-    margin-top: 50px;
+    margin-top: 55px;
     margin-bottom: 40px;
     text-align: center;
     font-size: 32px;
@@ -24,6 +23,7 @@
     overflow-y: auto;
     font-size: 24px;
     font-weight: 500;
+    overflow: overlay;
 }
 
 .custom-scrollbar {
@@ -68,7 +68,7 @@
 .topic-initials {
     width: 60px;
     height: 60px;
-    color: white;
+    color: #FFFFFF;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -86,7 +86,7 @@
     font-weight: 500;
     border: none;
     background-color: #16008B;
-    color: white;
+    color: #FFFFFF;
     border-radius: 50%;
     cursor: pointer;
     width: 90px;
