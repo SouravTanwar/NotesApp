@@ -1,35 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CreateTopicModal from './components/CreateTopicModal';
 import NotesPanel from './components/NotesPanel';
 import Sidebar from './components/Sidebar';
 import './App.css'
 
 function App() {
-  const [topics, setTopics] = useState([
-    {
-      id: 1,
-      name: 'Work',
-      color: '#FF6347',
-      initials: 'W',
-      notes: [
-        { id: 1, content: 'Discuss project timelines...', createdAt: new Date() },
-        { id: 2, content: 'Finish report and call client...', createdAt: new Date() },
-      ],
-    },
-    {
-      id: 2,
-      name: 'Personal',
-      color: '#87CEEB',
-      initials: 'P',
-      notes: [
-        { id: 3, content: 'Buy eggs, milk, and bread...', createdAt: new Date() },
-      ],
-    },
-  ]);
+  const [topics, setTopics] = useState([]);
 
   const [selectedTopicId, setSelectedTopicId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showNotesPanel, setShowNotesPanel] = useState(false)
+  const [isDataLoaded, setIsDataLoaded] = useState(false); 
 
+  useEffect(() => {
+    const storedTopics = localStorage.getItem('notesAppTopics');
+    if (storedTopics) {
+      setTopics(JSON.parse(storedTopics));
+    }
+    setIsDataLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (isDataLoaded) {
+      localStorage.setItem('notesAppTopics', JSON.stringify(topics));
+    }
+  }, [topics, isDataLoaded]);
+
+  
   const addTopic = (initials, name, color) => {
     const newTopic = {
       id: Date.now(),
@@ -43,6 +40,7 @@ function App() {
 
   const selectTopic = (id) => {
     setSelectedTopicId(id);
+    setShowNotesPanel(true)
   };
 
   const toggleModal = () => {
@@ -76,10 +74,13 @@ function App() {
         selectedTopicId={selectedTopicId}
         onSelectTopic={selectTopic}
         onAddTopic={toggleModal}
+        show={showNotesPanel ? "hide" : "show"}
       />
       <NotesPanel
         topic={selectedTopic}
         onAddNote={addNote}
+        show={showNotesPanel ? "show" : "hide"}
+        onBack={()=>setShowNotesPanel(false)}
       />
       {isModalOpen && (
         <CreateTopicModal

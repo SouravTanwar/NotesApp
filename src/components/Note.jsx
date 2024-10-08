@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Note.css';
 
 function Note({ note }) {
 
-  const formattedDate = note.createdAt.toLocaleDateString("en-IN", {
+  const createdDate = typeof note.createdAt === 'string' ? new Date(note.createdAt) : note.createdAt;
+
+  const formattedDate = createdDate.toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
     year: "numeric",
   });
-  const formattedTime = note.createdAt.toLocaleTimeString("en-IN", {
+  const formattedTime = createdDate.toLocaleTimeString("en-IN", {
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
@@ -19,7 +21,7 @@ function Note({ note }) {
       <p className="note-content">{note.content}</p>
       <div className="note-footer">
         <span className="note-date">{formattedDate} </span>
-        <span>&bull;</span>
+        <span className="dot"></span>
         <span className="note-time"> {formattedTime}</span>
       </div>
     </div>
