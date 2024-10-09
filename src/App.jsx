@@ -66,7 +66,7 @@ function App() {
   const selectedTopic = topics.find((topic) => topic.id === selectedTopicId);
 
   return (
-    <div className="app-container">
+    <main className="app-container">
       <Sidebar
         topics={topics}
         selectedTopicId={selectedTopicId}
@@ -86,7 +86,7 @@ function App() {
           onAddTopic={addTopic}
         />
       )}
-    </div>
+    </main>
   );
 }
 

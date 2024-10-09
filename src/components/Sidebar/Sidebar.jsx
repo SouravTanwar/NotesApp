@@ -5,9 +5,9 @@ function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic, show }) {
   
 
   return (
-    <div className={`sidebar ${show}`}>
+    <aside className={`sidebar ${show}`}>
       <h2 className='heading'>Pocket Notes</h2>
-      <div className="topics-list custom-scrollbar">
+      <section className="topics-list custom-scrollbar">
         {topics.map((topic) => (
           <div
             key={topic.id}
@@ -23,11 +23,11 @@ function Sidebar({ topics, selectedTopicId, onSelectTopic, onAddTopic, show }) {
             <span className="topic-name">{topic.name}</span>
           </div>
         ))}
-      </div>
+      </section>
       <button className="add-topic-button" onClick={onAddTopic}>
         +
       </button>
-    </div>
+    </aside>
   );
 }
 

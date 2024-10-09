@@ -19,23 +19,23 @@ function NotesPanel({ topic, onAddNote, show, onBack }) {
   if (!topic) {
     return (
       <div className="notes-panel">
-        <div className='default'>
+        <header className='default'>
           <img src={backgroundImg} alt="Background Image" className='bg-image'/>
           <h2 className='default-heading'>Pocket Notes</h2>
           <p className='default-content'>Send and receive messages without keeping your phone online.</p>
           <p className='default-content'>Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p>
-        </div>
-        <div className='footer'> 
+        </header>
+        <footer className='footer'> 
           <span className="material-symbols-outlined">lock</span>
           <span>end-to-end encrypted</span>
-        </div>
+        </footer>
       </div>
     );
   }
 
   return (
     <div className={`notes-panel ${show}`}>
-      <div className="notes-header">
+      <header className="notes-header">
         <span onClick={onBack} className="arrow-back material-symbols-rounded">
           keyboard_backspace
         </span>
@@ -46,12 +46,12 @@ function NotesPanel({ topic, onAddNote, show, onBack }) {
           {topic.initials}
         </div>
         <h2>{topic.name}</h2>
-      </div>
-      <div className="notes-list custom-note-scrollbar">
+      </header>
+      <section className="notes-list custom-note-scrollbar">
         {topic.notes.map((note) => (
           <Note key={note.id} note={note} />
         ))}
-      </div>
+      </section>
       <form className="add-note-form" onSubmit={handleAddNote}>
         <textarea
           value={newNoteContent}

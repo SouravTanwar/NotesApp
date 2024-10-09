@@ -17,14 +17,14 @@ function Note({ note }) {
   }).replace("am", "AM").replace("pm", "PM");
 
   return (
-    <div className="note">
+    <article className="note">
       <p className="note-content">{note.content}</p>
       <div className="note-footer">
         <span className="note-date">{formattedDate} </span>
         <span className="dot"></span>
         <span className="note-time"> {formattedTime}</span>
       </div>
-    </div>
+    </article>
   );
 }
 
