@@ -52,7 +52,6 @@ function CreateTopicModal({ onClose, onAddTopic }) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter topic name"
-              required
             />
           </div>
           <div className="form-group color">
@@ -65,7 +64,7 @@ function CreateTopicModal({ onClose, onAddTopic }) {
                   style={{
                     backgroundColor: color,
                     border:
-                      selectedColor === color ? "3px solid black" : "none",
+                      selectedColor === color ? "1px solid black" : "none",
                   }}
                   onClick={() => setSelectedColor(color)}
                 ></div>

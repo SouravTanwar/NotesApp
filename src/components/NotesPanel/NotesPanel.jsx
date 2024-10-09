@@ -63,11 +63,10 @@ function NotesPanel({ topic, onAddNote, show, onBack }) {
             }
           }}
           placeholder="Enter your text here..."
-          required
         ></textarea>
         <button
           type="submit"
-          style={{color: newNoteContent ? "#001F8B" : "#ABABAB"}}
+          style={{color: newNoteContent.trim() ? "#001F8B" : "#ABABAB"}}
           className="material-symbols-outlined submit"
         >
           send
