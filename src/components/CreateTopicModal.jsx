@@ -55,7 +55,7 @@ function CreateTopicModal({ onClose, onAddTopic }) {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-group color">
             <label>Choose Colour</label>
             <div className="color-picker">
               {colors.map((color, index) => (
