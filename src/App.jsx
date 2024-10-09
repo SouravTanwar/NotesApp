@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import CreateTopicModal from './components/CreateTopicModal';
-import NotesPanel from './components/NotesPanel';
-import Sidebar from './components/Sidebar';
+import { Sidebar, NotesPanel, CreateTopicModal } from './components';
 import './App.css'
 
 function App() {

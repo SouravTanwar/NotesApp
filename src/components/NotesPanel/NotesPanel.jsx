@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Note from './Note';
+import Note from '../Note/Note';
 import './NotesPanel.css';
-import backgroundImg from '../assets/background.png';
+import backgroundImg from '../../assets/background.png';
 
 function NotesPanel({ topic, onAddNote, show, onBack }) {
   const [newNoteContent, setNewNoteContent] = useState('');
