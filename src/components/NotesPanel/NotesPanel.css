@@ -97,13 +97,13 @@
 }
 
 .add-note-form textarea {
-    margin: 1.875rem;
-    padding: 1.25rem;
+    margin: 1.8rem;
+    padding: 1.2rem;
     border: none;
-    border-radius: 0.63rem;
+    border-radius: 0.6rem;
     resize: vertical;
-    height: 13.75rem;
-    font-size: 1.75rem;
+    height: 13.2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     outline: none;
     color: #9A9A9A;
@@ -118,4 +118,19 @@
     border: none;
     cursor: pointer;
     font-size: 3.2rem;
+}
+
+@media (max-width: 900px){
+    .add-note-form textarea {
+        margin: 15px;
+        padding: 10px;
+        height: 105px;
+        font-size: 17px;
+    }
+
+    .submit{
+        font-size: 25px;
+        bottom: 30px;
+        right: 25px;
+    }
 }
