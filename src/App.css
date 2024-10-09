@@ -16,6 +16,9 @@
 }
 
 @media (min-width: 700px) {
+    html {
+        font-size: 16px;
+    }
     .sidebar{
         display: flex;
     }
@@ -28,6 +31,9 @@
 }
 
 @media (max-width: 700px) {
+    html {
+        font-size: 13px;
+    }
     .sidebar.show{
         display: flex;
     }

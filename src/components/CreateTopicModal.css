@@ -12,39 +12,39 @@
 
 .modal {
     background-color: #FFFFFF;
-    padding: 30px;
+    padding: 1.875rem;
     border-radius: 6px;
     width: 750px;
-    box-sizing: border-box;
+    margin: auto 25px;
 }
 
 .modal h2 {
-    margin: 20px 15px;
-    font-size: 29px;
+    margin: 1.25rem 0.94rem;
+    font-size: 1.82rem;
     font-weight: 500;
 }
 
 .form-group {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 .form-group label{
-    margin-right: 35px;
-    margin-left: 15px;
-    font-size: 27px;
+    margin-right: 2.187rem;
+    margin-left: 0.94rem;
+    font-size: 1.68rem;
     font-weight: 500;
 }
 
 .form-group input[type="text"]{
     width: 70%;
-    padding: 8px 25px;
+    padding: 0.5rem 1.56rem;
     box-sizing: border-box;
-    border-radius: 20px;
-    border: 2px solid #CCCCCC;
+    border-radius: 1.125rem;
+    border: 0.125rem solid #CCCCCC;
     color: #979797;
-    font-size: 23px;
+    font-size: 1.437rem;
     font-weight: 400;
     outline: none;
 }
@@ -52,12 +52,12 @@
 .color-picker {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.2rem;
 }
 
 .color-circle {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -68,14 +68,14 @@
 }
 
 .modal-submit {
-    padding: 10px 50px;
+    padding: 0.625rem 3.125rem;
     border: none;
     cursor: pointer;
     border-radius: 11px;
-    font-size: 20px;
+    font-size: 1.125rem;
     font-weight: 400;
     background-color: #001F8B;
-    color: white;
+    color: #FFFFFF;
     float: right;
 }
 
