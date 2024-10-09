@@ -97,13 +97,13 @@
 }
 
 .add-note-form textarea {
-    margin: 1.8rem;
-    padding: 1.2rem;
+    margin: 1.5rem;
+    padding: 1rem;
     border: none;
-    border-radius: 0.6rem;
+    border-radius: 0.5rem;
     resize: vertical;
-    height: 13.2rem;
-    font-size: 1.5rem;
+    height: 12.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     outline: none;
     color: #9A9A9A;
